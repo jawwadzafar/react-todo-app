@@ -1,9 +1,9 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 function TodoList({items,removeItem,markTodoDone,toggle,viewToggle}){
-  if(localStorage.getItem('todos'+localStorage.getItem('user'))){
+  if(localStorage.getItem('todos')){
     let user = localStorage.getItem('user');
-    let newItem = items.filter(e=>{ return e.userid == user});
+    let newItem = items.filter(e=>{ return e.userid === user});
     return (
       <ul className="list-group">
         {newItem.map((item, index) => (
@@ -25,9 +25,7 @@ function TodoList({items,removeItem,markTodoDone,toggle,viewToggle}){
 }
 
 class TodoListItem extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
   onClickClose = () => {
     var index = parseInt(this.props.index);
     this.props.removeItem(index);

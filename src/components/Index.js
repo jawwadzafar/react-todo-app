@@ -63,7 +63,7 @@ class Index extends React.Component {
           <Route exact path="/" render={(props)=>this.state.isLoggedIn?<HomePage {...props} />:<Redirect to="/login" />}/>
           <Route render={(props)=><NotFoundPage  {...props} handleLogout={this.handleLogout} />}/>
         </Switch>
-        <div className="footer">Made with React.js By <a href="https://github.com/jawwadzafar" target="_blank">Jawwad Zafar</a></div>
+        <div className="footer">Made with React.js By <a  rel="noopener noreferrer" href="https://github.com/jawwadzafar" target="_blank">Jawwad Zafar</a></div>
       </Fragment>
     );
   }

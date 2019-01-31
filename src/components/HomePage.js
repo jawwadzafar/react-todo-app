@@ -14,7 +14,7 @@ class HomePage extends React.Component {
           modal: false,
           viewModal: false,
           edit:null,
-          todoItems: JSON.parse(localStorage.getItem('todos'+localStorage.getItem('user')))
+          todoItems: JSON.parse(localStorage.getItem('todos'))
         };
       }
       handleEdit =(modaldata)=>{
@@ -47,13 +47,13 @@ class HomePage extends React.Component {
           userid:localStorage.getItem('user'),
           done: false
         });
-        localStorage.setItem('todos'+localStorage.getItem('user'),JSON.stringify(oldItems));
+        localStorage.setItem('todos',JSON.stringify(oldItems));
         this.setState({todoItems: oldItems});
       }
       removeItem = (itemIndex) =>{
         let oldItems = this.state.todoItems;
         oldItems.splice(itemIndex, 1);
-        localStorage.setItem('todos'+localStorage.getItem('user'),JSON.stringify(oldItems));
+        localStorage.setItem('todos',JSON.stringify(oldItems));
         this.setState({todoItems: oldItems});
       }
       markTodoDone = (itemIndex) =>{
@@ -62,7 +62,7 @@ class HomePage extends React.Component {
         oldItems.splice(itemIndex, 1);
         todo.done = !todo.done;
         todo.done ? oldItems.push(todo) : oldItems.unshift(todo);
-        localStorage.setItem('todos'+localStorage.getItem('user'),JSON.stringify(oldItems));
+        localStorage.setItem('todos',JSON.stringify(oldItems));
         this.setState({todoItems: oldItems});  
       }
       searchTarget = (index, arr) => {
@@ -81,7 +81,7 @@ class HomePage extends React.Component {
       editTodo = (newTodo)=>{
         let oldItems = this.state.todoItems;
         oldItems[this.searchTarget(newTodo.index,oldItems)] = newTodo;
-        localStorage.setItem('todos'+localStorage.getItem('user'),JSON.stringify(oldItems));
+        localStorage.setItem('todos',JSON.stringify(oldItems));
         this.setState({todoItems: oldItems});  
       }
 
@@ -96,7 +96,7 @@ render(){
             <div className="col-md-8 col-lg-9">
                   <div className="bg-white p-3">
             <h5 className="">Todo List</h5>
-            <div className="form-box table-box">
+            <div className="todo-box">
             <Todo toggle={this.toggle} viewToggle={this.viewToggle} items={this.state.todoItems} removeItem={this.removeItem} markTodoDone={this.markTodoDone}/>
             </div>
           </div>

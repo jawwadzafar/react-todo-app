@@ -14,6 +14,9 @@ class Login extends React.Component {
       errorMsg: ""
     };
   }
+  componentDidMount() {
+    this.refs.itemName.focus();
+  }
   handleChange = e => {
     let userdata = { ...this.state.userdata };
     userdata[e.target.name] = e.target.value;
@@ -87,6 +90,7 @@ class Login extends React.Component {
                     className="form-control"
                     name="username"
                     placeholder="username"
+                    ref="itemName"
                     type="text"
                     onChange={e => this.handleChange(e)}
                     value={this.state.userdata.username}

@@ -19,6 +19,9 @@ class Signup extends React.Component {
     userdata[e.target.name] = e.target.value;
     this.setState({ userdata });
   };
+  componentDidMount() {
+    this.refs.itemName.focus();
+  }
   searchUsername = (username, arr) => {
     if(arr && arr.length > 0){
       for (var i = 0; i < arr.length; i++) {
@@ -85,6 +88,7 @@ class Signup extends React.Component {
                     name="username"
                     placeholder="choose a username"
                     type="text"
+                    ref="itemName"
                     onChange={e => this.handleChange(e)}
                     value={this.state.userdata.username}
                   />

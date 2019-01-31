@@ -1,5 +1,5 @@
-import React,{Fragment} from "react";
-import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import React from "react";
+import { Modal, ModalBody, ModalFooter } from "reactstrap";
 
 class ViewModal extends React.Component {
   constructor(props) {
@@ -7,7 +7,6 @@ class ViewModal extends React.Component {
     this.state = {
       modalData: this.props.data,
     };
-    console.log(this.state)
   }
   componentWillReceiveProps(props) {
     this.setState({
