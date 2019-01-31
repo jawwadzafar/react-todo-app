@@ -41,6 +41,7 @@ class Signup extends React.Component {
       });
     } else {
       let data = this.state.userdata;
+      data.username = data.username.toLowerCase();
       let users = JSON.parse(localStorage.getItem("users"));
       let searchUser = this.searchUsername(data.username, users);
       if (searchUser) {
@@ -50,8 +51,8 @@ class Signup extends React.Component {
         });
       } else {
         let oldUsers = JSON.parse(localStorage.getItem("users"));
-        let newUser = {userid: oldUsers.length+1, username: this.state.userdata.username, password: this.state.userdata.password}
-        oldUsers.push(newUser)
+        let newUser = {userid: (oldUsers && oldUsers.length)?oldUsers.length+1:1, username: this.state.userdata.username, password: this.state.userdata.password}
+        oldUsers?oldUsers.push(newUser):oldUsers=newUser
         localStorage.setItem('users',JSON.stringify(oldUsers))
         return this.props.handleLogin(newUser.userid);
       }

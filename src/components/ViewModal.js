@@ -45,7 +45,7 @@ class ViewModal extends React.Component {
                   <textarea
                     className="form-control"
                     name="description"
-                    placeholder="enter a description (optional)"
+                    placeholder="...seems like you didn't put any description"
                     type="text"
                     disabled={true}
                     value={this.state.modalData.description}

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
 function TodoList({items,removeItem,markTodoDone,toggle,viewToggle}){
-  if(localStorage.getItem('todos')){
+  if(localStorage.getItem('todos'+localStorage.getItem('user'))){
     let user = localStorage.getItem('user');
     let newItem = items.filter(e=>{ return e.userid == user});
     return (

@@ -14,12 +14,11 @@ class HomePage extends React.Component {
           modal: false,
           viewModal: false,
           edit:null,
-          todoItems: JSON.parse(localStorage.getItem('todos'))
+          todoItems: JSON.parse(localStorage.getItem('todos'+localStorage.getItem('user')))
         };
       }
       handleEdit =(modaldata)=>{
         this.toggle(null);
-        console.log('noww---editing', modaldata)
         this.editTodo(modaldata);
 
         }
@@ -48,13 +47,13 @@ class HomePage extends React.Component {
           userid:localStorage.getItem('user'),
           done: false
         });
-        localStorage.setItem('todos',JSON.stringify(oldItems));
+        localStorage.setItem('todos'+localStorage.getItem('user'),JSON.stringify(oldItems));
         this.setState({todoItems: oldItems});
       }
       removeItem = (itemIndex) =>{
         let oldItems = this.state.todoItems;
         oldItems.splice(itemIndex, 1);
-        localStorage.setItem('todos',JSON.stringify(oldItems));
+        localStorage.setItem('todos'+localStorage.getItem('user'),JSON.stringify(oldItems));
         this.setState({todoItems: oldItems});
       }
       markTodoDone = (itemIndex) =>{
@@ -63,16 +62,26 @@ class HomePage extends React.Component {
         oldItems.splice(itemIndex, 1);
         todo.done = !todo.done;
         todo.done ? oldItems.push(todo) : oldItems.unshift(todo);
-        localStorage.setItem('todos',JSON.stringify(oldItems));
+        localStorage.setItem('todos'+localStorage.getItem('user'),JSON.stringify(oldItems));
         this.setState({todoItems: oldItems});  
       }
+      searchTarget = (index, arr) => {
+        if(arr && arr.length > 0){
+          for (var i = 0; i < arr.length; i++) {
+            if (arr[i].index === index) {
+              return i
+            }
+          }
+        }else{
+          return null
+        }
+    
+      };
 
       editTodo = (newTodo)=>{
         let oldItems = this.state.todoItems;
-        console.log('-----',oldItems[0])
-        // var todo = oldItems[newTodo.index];
-        oldItems[newTodo.index-1] = newTodo;
-        localStorage.setItem('todos',JSON.stringify(oldItems));
+        oldItems[this.searchTarget(newTodo.index,oldItems)] = newTodo;
+        localStorage.setItem('todos'+localStorage.getItem('user'),JSON.stringify(oldItems));
         this.setState({todoItems: oldItems});  
       }
 

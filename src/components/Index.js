@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import HomePage from './HomePage';
 import Login from './Login';
 import Signup from './Signup';
-import Todo from './Todo';
+import NotFoundPage from './NotFoundPage'
 
 class Index extends React.Component {
     constructor(props){
@@ -60,7 +60,8 @@ class Index extends React.Component {
         <Switch>
           <Route exact path="/login" render={(props)=><Login  {...props}  handleLogin={this.handleLogin} isLoggedIn={this.state.isLoggedIn}/>} />
           <Route exact path="/signup" render={(props)=><Signup  {...props}  handleLogin={this.handleLogin} isLoggedIn={this.state.isLoggedIn}/>} />
-          <Route path="/" render={(props)=>this.state.isLoggedIn?<HomePage {...props} />:<Redirect to="/login" />}/>
+          <Route exact path="/" render={(props)=>this.state.isLoggedIn?<HomePage {...props} />:<Redirect to="/login" />}/>
+          <Route render={(props)=><NotFoundPage  {...props} handleLogout={this.handleLogout} />}/>
         </Switch>
         <div className="footer">Made with React.js By <a href="https://github.com/jawwadzafar" target="_blank">Jawwad Zafar</a></div>
       </Fragment>

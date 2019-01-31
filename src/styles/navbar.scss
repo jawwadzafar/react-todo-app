@@ -1,6 +1,7 @@
 
 .navbar .logo {
-    height: 30px;
+    height: 44px;
+
   }
   
   .navbar{
@@ -53,30 +54,7 @@
         font-style: normal;
     }
     .btn{
-        &.btn-sell {
-            background: none;
-            color: red;
-            border: 1.4px solid red;
-            text-transform: uppercase;
-            font-size: 1rem;
-            letter-spacing: 2px;
-            &:hover{
-                background: red;
-                color:white;
-            }
-        }
-        &.btn-buy{
-            background: none;
-            color: green;
-            border: 1.4px solid green;
-            text-transform: uppercase;
-            font-size: 1rem;
-            letter-spacing: 2px;
-            &:hover{
-                background: green;
-                color:white;
-            }
-        }
+       
         &.btn-login{
             background: none;
             color: #414141;
@@ -91,67 +69,23 @@
         }
         &.btn-submit{
             background: none;
-            color: #414141;
-            border: 1.4px solid #007bff;
+            color: #2753b5;
+            border: 1.4px solid #2753b5;
             text-transform: uppercase;
             font-size: 1rem;
             letter-spacing: 2px;
             &:hover{
-                background: #007bff;
+                background: #2753b5;
                 color:white;
             }
         }
-        &.btn-edit {
-            // color: #414141;
-            // background-color: none;
-            // border-color: #dcbf07;
-            padding: 3px;
-            // font-size: 14px;
-            
-            background:transparent;
-            display: inherit;
-            padding: 0px;
-            margin: 0px;
-            margin-right: 3px;
-            // font-size: 10px;
-        }
-        &.btn-delete {
-            // color: #414141;
-            // background-color: none;
-            // border-color: #dc0783;
-            padding: 3px;
-            background:transparent;
-            font-size: 14px;
-            margin: 10px;
-            display: inherit;
-            padding: 0px;
-            margin: 0px;
-            // font-size: 10px;
-        }
-        &.btn-active {
-            color: #414141;
-            background-color: none;
-            border-color: #dcbf07;
-            padding: 3px;
-            font-size: 14px;
-            margin: 10px;
-            background:transparent;
-        }
-        &.btn-inactive {
-            color: #414141;
-            background-color: none;
-            border-color: #dc0783;
-            padding: 3px;
-            background:transparent;
-            font-size: 14px;
-            margin: 10px;
-        }
+       
 
 
     }
 
 .login{
-    height: 40px;
+    height: 80px;
     margin-bottom: 10%;
     margin-top:10%;
 }

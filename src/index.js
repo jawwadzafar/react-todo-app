@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './App';
-import {BrowserRouter} from 'react-router-dom'
+//using hashrouter because hosted to a static site server
+import {BrowserRouter,HashRouter} from 'react-router-dom'
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-    <BrowserRouter>
+    <HashRouter>
     <App/>
-  </BrowserRouter>, document.getElementById('root'));
+  </HashRouter>, document.getElementById('root'));
   registerServiceWorker();
 
 

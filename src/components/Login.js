@@ -41,6 +41,7 @@ class Login extends React.Component {
       });
     } else {
       let data = this.state.userdata;
+      data.username = data.username.toLowerCase();
       let users = JSON.parse(localStorage.getItem("users"));
       let searchUser = this.searchUsername(data.username, users);
       if (searchUser) {
