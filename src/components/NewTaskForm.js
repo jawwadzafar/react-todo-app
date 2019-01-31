@@ -4,7 +4,7 @@ class PlaceOrderForm extends React.Component {
     super(props);
     this.state = {
       userdata: {
-        task: "",
+        title: "",
         description: ""
       },
       error: false,
@@ -21,12 +21,12 @@ class PlaceOrderForm extends React.Component {
   }
   handleSubmit = e => {
     e.preventDefault();
-    if(this.state.userdata.task){
+    if(this.state.userdata.title){
       let userdata = { ...this.state.userdata };
       this.props.addItem(userdata)
       this.setState({
         userdata: {
-          task: "",
+          title: "",
           description: ""
         }
       })
@@ -42,15 +42,15 @@ class PlaceOrderForm extends React.Component {
         <h5 className="mt-2">Add A Todo</h5>
         </div>
                 <div className="form-group">
-                  <label className="small" htmlFor="task">Title</label>
+                  <label className="small" htmlFor="title">Title</label>
                   <input
                   ref="itemName"
                     className="form-control"
-                    name="task"
-                    placeholder="task name"
+                    name="title"
+                    placeholder="todo name"
                     type="text"
                     onChange={e => this.handleChange(e)}
-                    value={this.state.userdata.task}
+                    value={this.state.userdata.title}
                   />
                 </div>
                 <div className="form-group">

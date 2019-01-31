@@ -15,11 +15,11 @@ class Index extends React.Component {
         }
         // if(!localStorage.getItem('todos')){
         //   let todoItems = [];
-        //   todoItems.push({index: 1, value: "learn react", description: 'lorem ipsum', done: false, userid: 1});
-        //   todoItems.push({index: 2, value: "Go shopping", description: 'lorem ipsum', done: true, userid: 1});
-        //   todoItems.push({index: 3, value: "buy flowers", description: 'lorem ipsum', done: true, userid: 1});
-        //   todoItems.push({index: 4, value: "11Go shopping", description: 'lorem ipsum', done: false, userid: 2});
-        //   todoItems.push({index: 5, value: "23Go shopping", description: 'lorem ipsum', done: true, userid: 2});
+        //   todoItems.push({index: 1, title: "learn react", description: 'lorem ipsum', done: false, userid: 1});
+        //   todoItems.push({index: 2, title: "Go shopping", description: 'lorem ipsum', done: true, userid: 1});
+        //   todoItems.push({index: 3, title: "buy flowers", description: 'lorem ipsum', done: true, userid: 1});
+        //   todoItems.push({index: 4, title: "11Go shopping", description: 'lorem ipsum', done: false, userid: 2});
+        //   todoItems.push({index: 5, title: "23Go shopping", description: 'lorem ipsum', done: true, userid: 2});
         //   localStorage.setItem('todos', JSON.stringify(todoItems))
         // }
 

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-function TodoList({items,removeItem,markTodoDone,toggle}){
+function TodoList({items,removeItem,markTodoDone,toggle,viewToggle}){
   if(localStorage.getItem('todos')){
     let user = localStorage.getItem('user');
     let newItem = items.filter(e=>{ return e.userid == user});
@@ -14,6 +14,7 @@ function TodoList({items,removeItem,markTodoDone,toggle}){
             removeItem={removeItem}
             markTodoDone={markTodoDone}
             toggle={toggle}
+            viewToggle={viewToggle}
           />
         ))}
       </ul>
@@ -41,10 +42,11 @@ class TodoListItem extends React.Component {
       <li className="list-group-item todo">
         <div className={item.done?"todo-list done" : "todo-list undone"}>
           <span className={item.done? "fa fa-check-circle" :"fa fa-circle-o"} onClick={this.onClickDone} />
-          {this.props.item.value}
+          {this.props.item.title}
           <button type="button" className="close mini-icon" onClick={this.onClickClose}><i className="fa fa-trash"></i></button>
           <button type="button" className="close mini-icon" onClick={(()=>this.props.toggle(item))}><i className="fa fa-edit"></i></button>
-          <button type="button" className="close mini-icon" onClick={this.onClickClose}><i className="fa fa-eye"></i></button>
+          <button type="button" className="close mini-icon" onClick={(()=>this.props.viewToggle(item))}><i className="fa fa-eye"></i></button>
+          {/* <button type="button" className="close mini-icon" onClick={(()=>this.props.viewToggle(item))}><i className="fa fa-eye"></i></button> */}
         </div>
       </li>
     );
