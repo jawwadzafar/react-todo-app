@@ -1,0 +1,166 @@
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 27px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+  left: 6px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  left: 6px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  left: 26px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  left: 45px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(19px, 0);
+  }
+}
+
+
+// .display-center{
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// html, body {
+//   height: 100%;
+//   color: #61DAFB;
+//   background: #2D2D2D;
+// }
+
+// h1 {
+//   margin: 20px 0 15px 0;  
+// }
+
+#main {
+  // width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+ul {
+  list-style: none;
+}
+
+ul > li.todo:hover {
+  // background-color: #F5F5F5;
+  background-color: #fff3f3;
+}
+
+.form-inline .form-control {
+  width: 50%;
+  margin-left: 80px;
+}
+
+.todo {
+  .done {
+    color: #ecbfbf;
+    text-decoration: line-through;
+    i {
+      color: #cacaca;
+    }
+  }
+  .undone {
+    color: #494e45;
+    i {
+      color: #3e3e3e;
+    }
+  }
+}
+
+
+.icon {
+  margin: 6px 10px 6px 0;
+}
+
+.todo {
+  word-break: break-all;
+  // cursor: context-menu;
+  span {
+    margin-right: 1%;
+    cursor: pointer;
+  }
+}
+
+.close.view {
+  font-size: 1rem;
+
+}
+
+.mini-icon {
+  margin-right: 1%;
+}
+
+.list-group-item {
+  border: 1px solid #e3e3e3;
+}
+
+.footer{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background: #e4e4e4;
+  text-align: center;
+  padding: 0px;
+  height: 24px;
+  color: white;
+  font-size: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a{
+    color:white;
+    text-decoration: none;
+    margin-left: 2px;
+  }
+}

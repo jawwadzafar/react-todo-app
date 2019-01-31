@@ -1,0 +1,166 @@
+
+.navbar .logo {
+    height: 30px;
+  }
+  
+  .navbar{
+      box-shadow: -1px 1px 7px rgba(0, 0, 0, 0.25);
+      background-color: #fff!important;
+      .navbar-nav .nav-link {
+          color: rgba(255,255,255,.5);
+          color: #1a1a1a;
+          font-weight: bold;
+          font-size: 13px;
+      }
+  }
+
+
+  .nav-tabs .nav-item {
+    margin-bottom: -1px;
+    width: 50%;
+    text-align: center;
+    border: none;
+    flex: 1;
+    background: white;
+    .nav-link{
+        padding: 15px 10px;
+        border: none;
+        font-weight: 600;
+        font-size: 12px;
+        background: #e6e6e6;
+        
+        box-shadow: inset 0 -3px 12center-thirdpx -3px rgba(0,0,0,.1);
+        border-radius: 0px;
+        cursor: pointer;
+        transition: 170ms all ease-in;
+        color: rgba(65, 65, 65, 0.63);
+        border: 1px solid #dadada;
+        &.active{
+            border:none;
+            color: #414141;
+            box-shadow: none;
+            background: #fff;
+    
+    box-shadow: none;
+                    }
+    }
+
+    }
+
+    i.nav-link.logout {
+        cursor: pointer;
+        text-decoration: none;
+        font-style: normal;
+    }
+    .btn{
+        &.btn-sell {
+            background: none;
+            color: red;
+            border: 1.4px solid red;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            &:hover{
+                background: red;
+                color:white;
+            }
+        }
+        &.btn-buy{
+            background: none;
+            color: green;
+            border: 1.4px solid green;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            &:hover{
+                background: green;
+                color:white;
+            }
+        }
+        &.btn-login{
+            background: none;
+            color: #414141;
+            border: 1.4px solid #414141;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            &:hover{
+                background: #414141;
+                color:white;
+            }
+        }
+        &.btn-submit{
+            background: none;
+            color: #414141;
+            border: 1.4px solid #007bff;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            &:hover{
+                background: #007bff;
+                color:white;
+            }
+        }
+        &.btn-edit {
+            // color: #414141;
+            // background-color: none;
+            // border-color: #dcbf07;
+            padding: 3px;
+            // font-size: 14px;
+            
+            background:transparent;
+            display: inherit;
+            padding: 0px;
+            margin: 0px;
+            margin-right: 3px;
+            // font-size: 10px;
+        }
+        &.btn-delete {
+            // color: #414141;
+            // background-color: none;
+            // border-color: #dc0783;
+            padding: 3px;
+            background:transparent;
+            font-size: 14px;
+            margin: 10px;
+            display: inherit;
+            padding: 0px;
+            margin: 0px;
+            // font-size: 10px;
+        }
+        &.btn-active {
+            color: #414141;
+            background-color: none;
+            border-color: #dcbf07;
+            padding: 3px;
+            font-size: 14px;
+            margin: 10px;
+            background:transparent;
+        }
+        &.btn-inactive {
+            color: #414141;
+            background-color: none;
+            border-color: #dc0783;
+            padding: 3px;
+            background:transparent;
+            font-size: 14px;
+            margin: 10px;
+        }
+
+
+    }
+
+.login{
+    height: 40px;
+    margin-bottom: 10%;
+    margin-top:10%;
+}
+
+.btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #79797940;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+}
